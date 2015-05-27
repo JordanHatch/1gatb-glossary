@@ -1,0 +1,17 @@
+<h1>
+  <% if entry.expanded_term.present? %>
+    <%= entry.expanded_term %>
+    <span class="acronym">(<%= entry.term %>)</span>
+  <% else %>
+    <%= entry.term %>
+  <% end %>
+</h1>
+
+<div class="definition">
+  <%= simple_format entry.definition %>
+</div>
+
+
+<div class="actions">
+  <%= link_to "Edit this entry", edit_entry_path(entry) %>
+</div>

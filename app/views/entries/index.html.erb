@@ -1,0 +1,12 @@
+<h1>Entries</h1>
+
+<p><%= link_to "Add new entry", new_entry_path, class: 'btn' %></p>
+
+<ul>
+<% entries.each do |entry| %>
+  <li>
+    <h3><%= entry.term %></h3>
+    <p><%= entry.definition %></p>
+  </li>
+<% end %>
+</ul>
