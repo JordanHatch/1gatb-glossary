@@ -13,7 +13,7 @@
 
 <div class="definition">
   <% if entry.definition.present? %>
-    <%= simple_format entry.definition %>
+    <%= simple_format presented_entry.definition_with_links %>
   <% else %>
     <p class="no-definition">
       There's no definition for this term yet.

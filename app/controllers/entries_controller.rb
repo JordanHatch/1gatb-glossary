@@ -49,6 +49,11 @@ private
   end
   helper_method :entry
 
+  def presented_entry
+    EntryPresenter.new(entry)
+  end
+  helper_method :presented_entry
+
   def entries
     @entries ||= Entry.existing
   end

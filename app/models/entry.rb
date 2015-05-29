@@ -10,4 +10,8 @@ class Entry < ActiveRecord::Base
     update_attributes!(archived: true)
   end
 
+  def full_term
+    expanded_term.present? ? expanded_term : term
+  end
+
 end
