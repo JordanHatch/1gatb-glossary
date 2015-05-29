@@ -2,6 +2,10 @@ class EntriesController < ApplicationController
   def index
   end
 
+  def archived
+    @entries = Entry.archived
+  end
+
   def new
     @entry = Entry.new
   end
@@ -32,6 +36,13 @@ class EntriesController < ApplicationController
     end
   end
 
+  def destroy
+    entry.archive!
+
+    flash.notice = 'Entry sent to trash'
+    redirect_to entries_path
+  end
+
 private
   def entry
     @entry ||= Entry.find(params[:id])
@@ -39,12 +50,12 @@ private
   helper_method :entry
 
   def entries
-    @entries ||= Entry.all
+    @entries ||= Entry.existing
   end
   helper_method :entries
 
   def entry_params
-    params.require(:entry).permit(:term, :definition)
+    params.require(:entry).permit(:term, :definition, :expanded_term)
   end
 
 end

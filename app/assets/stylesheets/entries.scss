@@ -1,3 +1,71 @@
-// Place all the styles related to the entries controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+ul.entries {
+  padding-left: 0;
+  margin: 10px 0 30px;
+
+  li {
+    list-style: none;
+    margin: 0 0 3px;
+
+    h3 {
+      margin: 0;
+    }
+    a {
+      display: block;
+      background: #eee;
+      padding: 8px 12px;
+      text-decoration: none;
+
+      &:hover {
+        background: #e6e6e6;
+        color: #333;
+      }
+
+      .no-definition {
+        @extend .label;
+        @extend .label-default;
+        margin-left: 10px;
+        font-weight: normal;
+        background: #aaa;
+      }
+    }
+  }
+
+}
+
+.actions {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.single-actions {
+  border-top: 1px solid #eee;
+  padding: 10px 0;
+  a {
+    @extend .btn;
+    @extend .btn-primary;
+  }
+  a.delete {
+    @extend .btn-danger;
+  }
+}
+
+p.archived {
+  font-size: 15px;
+  text-align: center;
+
+  a { color: #666; }
+}
+
+.definition {
+  margin: 15px 0;
+  font-size: 25px;
+}
+
+.no-definition {
+  color: #888;
+}
+
+.last-update {
+  font-size: 15px;
+  margin-left: 20px;
+}

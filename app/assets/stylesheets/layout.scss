@@ -1,0 +1,52 @@
+@import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic');
+
+body {
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  font-size: 19px;
+}
+
+body > header {
+  @extend .container-fluid;
+  background: #0076c0;
+  color: #fff;
+  // height: 60px;
+  padding: 0;
+
+  h1 {
+    margin: 0;
+
+    a {
+      display: block;
+      background: asset-url('rcoa.png') no-repeat 15px center;
+      font-size: 28px;
+      text-decoration: none;
+      color: #fff;
+      padding: 15px 75px;
+      font-weight: normal;
+
+      &:hover {
+        background-color: #004570;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+main {
+  @extend .container-fluid;
+
+  h1, h2, h3 {
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 29px;
+  }
+  h2 {
+    font-size: 23px;
+  }
+  h3 {
+    font-size: 17px;
+  }
+}
